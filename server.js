@@ -4,7 +4,8 @@ const authRoutes = require("./routes/authRoutes");
 const participantRoutes = require("./routes/participantRoutes");
 const visitRoutes = require("./routes/visitRoutes");
 const trialDataRoutes = require("./routes/trialDataRoutes");
-
+const cors = require("cors");
+app.use(cors());
 const dotenv = require("dotenv")
 dotenv.config();
 const app = express();
