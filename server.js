@@ -7,6 +7,11 @@ const trialDataRoutes = require("./routes/trialDataRoutes");
 const cors = require("cors");
 
 
+
+const dotenv = require("dotenv")
+dotenv.config();
+const app = express();
+
 app.use(
   cors({
     origin: "http://localhost:5174",  // Replace with your frontend URL
@@ -14,11 +19,6 @@ app.use(
     allowedHeaders: "Content-Type,Authorization",
   })
 );
-const dotenv = require("dotenv")
-dotenv.config();
-const app = express();
-
-
 app.use(express.json());
 
 // Routes
