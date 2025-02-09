@@ -5,12 +5,15 @@ const participantRoutes = require("./routes/participantRoutes");
 const visitRoutes = require("./routes/visitRoutes");
 const trialDataRoutes = require("./routes/trialDataRoutes");
 const cors = require("cors");
-const corsOptions = {
-  origin: "http://localhost:5174/", // Allow only this origin
-  optionsSuccessStatus: 200, // Some legacy browsers choke on 204
-};
 
-app.use(cors(corsOptions));
+
+app.use(
+  cors({
+    origin: "http://localhost:5174",  // Replace with your frontend URL
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
+  })
+);
 const dotenv = require("dotenv")
 dotenv.config();
 const app = express();
