@@ -22,6 +22,7 @@ app.use(
     credentials: true,
   })
 );
+app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use("/auth", authRoutes);
 app.use("/participants", participantRoutes);
